@@ -1,5 +1,5 @@
 
-## API based Login-Logout using Passport and JWT in NodeJS ##
+## API based simple management tool in NodeJS ##
 
 **Description**
 
