@@ -5,7 +5,7 @@ This app includes following APIs:
 - **registration** `http://localhost:3000/pm/save`: POST
 
   ###### Body part:
-  *employee*`
+  *employee(type:1)*
   ```
     first_name:   arjun
     last_name:    singh
@@ -14,7 +14,7 @@ This app includes following APIs:
     longitude:    445.67
     type:         1
   ```
-  *manager*`
+  *manager(type:2)*
   ```
     first_name:   arjun
     last_name:    singh
@@ -22,7 +22,7 @@ This app includes following APIs:
     longitude:    445.67
     type:         2
   ```
-  *project*`
+  *project(type:3)*
   ```
     project_name:  p1
     start_date:    '2019-02-10'
