@@ -66,14 +66,12 @@ class ManagementDB {
                 if (err)
                     return reject(err)
                 let query = "SELECT e.emp_id, e.first_name AS ef_name, e.last_name AS el_name,m.first_name AS mf_name, m.last_name AS ml_name,p.project_name FROM employee e INNER JOIN emp_work_info w ON e.emp_id = w.emp_id INNER JOIN project p ON w.project_id = p.project_id INNER JOIN manager m ON p.project_id = m.manager_id";
-                console.log(query)
                 connection.query(query, [], function(err, rows, columns) {
                     connection.release();
                     if (err) {
                         console.log(err)
                         return reject(err)
                     }
-                    console.log(rows)
                     return resolve(rows);
                 });
             });

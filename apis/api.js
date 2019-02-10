@@ -450,16 +450,14 @@ getTableName = (input) => {
     switch(input) {
         case 1:
             return 'employee';
-        break;
         case 2:
             return 'manager';
-        break;
         case 3:
             return 'project';
-        break;
+        case 4:
+            return 'emp_work_info';
         default:
             return '';
-        break;
     }
 }
 validateTypeAndGetInput = (param) => {

@@ -29,3 +29,4 @@ yarn-error.log*
 *.mp3
 *.mkv
 *.bmp
+*.json
