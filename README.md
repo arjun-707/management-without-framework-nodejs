@@ -52,7 +52,7 @@ This app includes following APIs:
     manager_id: 1
     last_name:  wadhwa
   ```
-- **deleete record** `http://localhost:3000/pm/remove`: POST
+- **delete record** `http://localhost:3000/pm/remove`: POST
   ```
     type:       3
     project_id: 6
