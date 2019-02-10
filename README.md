@@ -5,31 +5,54 @@ This app includes following APIs:
 - **registration** `http://localhost:3000/pm/save`: POST
 
   ###### Body part:
+  *employee*`
   ```
     first_name:   arjun
     last_name:    singh
     designation:  developer
     latitude:     458.67
     longitude:    445.67
+    type:         1
+  ```
+  *manager*`
+  ```
+    first_name:   arjun
+    last_name:    singh
+    latitude:     458.67
+    longitude:    445.67
+    type:         2
+  ```
+  *project*`
+  ```
+    project_name:  p1
+    start_date:    '2019-02-10'
+    type:          3
   ```
 - **assign project to employee or manager** `http://localhost:3000/pm/assign` :  POST
   ###### Body part:
+  *employee*`
+  ```
+    emp_id:     1
+    type:       1
+    project_id: 1
+  ```
+  *manager*`
   ```
     manager_id: 1
     type:       2
     project_id: 1
   ```
-- **set password** `http://localhost:3000/pm/viewall` : GET
+- **see all data** `http://localhost:3000/pm/viewall` : GET
 
-- **view profile** `http://localhost:3000/pm/view?type=1` : GET 
+- **see one particular data** `http://localhost:3000/pm/view?type=1` : GET 
 
-- **profile pic upload** `http://localhost:3000/pm/edit` :   POST
+- **edit data** `http://localhost:3000/pm/edit` :   POST
   ```
     type:       2
     manager_id: 1
     last_name:  wadhwa
   ```
-- **logout and refresh token** `http://localhost:3000/pm/remove`: POST
+- **deleete record** `http://localhost:3000/pm/remove`: POST
   ```
     type:       3
     project_id: 6
