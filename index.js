@@ -1,11 +1,7 @@
 const express = require('express');
-const fileUpload = require('express-fileupload');
-const path = require('path');
 const bodyParser = require('body-parser');
-const passport = require('passport');
 
 require('./common/env')
-require('./configs/passport')
 
 const app = express()
 
@@ -13,8 +9,6 @@ const cors = require('cors')
 app.use(cors());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
-app.use(fileUpload());
-app.use(passport.initialize())
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -23,7 +17,7 @@ app.use(function(req, res, next) {
 });
 
 let apis = require('./apis/api')
-app.use('/user', apis)
+app.use('/pm', apis)
 
 /**
  * 404 Handler

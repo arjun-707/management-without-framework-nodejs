@@ -1,54 +1,25 @@
 
+// all the credentials are stored in config.json file
 process.CONFIG = require('../configs/config.json')
 
+// consist of all major  function such as db connection, logging, validation
 process.exporter = require("../lib/exporter.js")
 
-process.dbInit = (globalName, mongoUrl, collectionName) => {
-    require("../models/db-init.js")(mongoUrl, collectionName)
-    .then((modelObj) => {
-        process[globalName] = modelObj // will be used as global
-    })
-    .catch((dbInitErr) => {
-        process.exporter.logNow(`dbInit Error: ${dbInitErr}`)
-        process.exit()
-    });
-}
-process.redisTokenInit = ()  => {
-    process.exporter.redisConnection()
-    .then((client) => {
-        if (process.exporter.redisClient) {
-            /* await process.exporter.getHashKeysValuesFromRedis('token', client)
-            .then(async (redisTokendata) => {
-                let inputForRedis = []
-                if (!redisTokendata || !process.exporter.isObjectValid(redisTokendata) || Object.keys(redisTokendata).length < 1)
-                    for (let i = 0; i < process.CONFIG.jwt.token.length; i++) {
-                        inputForRedis.push(process.CONFIG.jwt.token[i])
-                        inputForRedis.push(0)
-                    }
-                if (inputForRedis.length > 1) {
-                    await process.exporter.deleteSingleKeyValuesFromRedis('token', client)
-                    await process.exporter.setHashKeyValuesIntoRedis('token', inputForRedis, client)
-                }
-            })
-            .catch((redisTokenError) => {
-                console.log(`redis token error: ${redisTokenError}`)
-                process.exit()
-            }) */
-        }
-        else {
-            process.exporter.logNow(`Redis initialize error`)
+// create DB connection object function
+process.mysqlPoolInit = (globalName, config = process.CONFIG.mysql.local) => {
+    return process.exporter.mysqlConnectionPool(config)
+        .then((mysqlConnObj) => {
+            console.log('mysql pool connected')
+            process[globalName] = mysqlConnObj        
+        })
+        .catch((dbInitErr) => {
+            console.log(`mysqlInit Error: ${dbInitErr}`)
+            process.exporter.logNow(`mysqlInit Error: ${dbInitErr}`)
             process.exit()
-        }
-    })
-    .catch((redisErr) => {
-        process.exporter.logNow(`Redis connection error: ${redisErr}`)
-        process.exit()
-    })
-
+        });
 }
-(async () => {
-    await process.redisTokenInit()
-})()
+// making connection with localhost, Connection Object name will be `process.local` which will be accessed globally
+process.mysqlPoolInit('local') 
 
-// route urls
-process.logoutURL = 'user/logout' 
+// include model globally
+process.managementDB = require('../models/managementDB.js')
