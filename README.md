@@ -63,7 +63,9 @@ This app includes following APIs:
 - <a href="https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/">NodeJS (10*)</a>
 
 **Do following things before running the app**
-- make a Database (`winzify`) in MySQL and use it
+- make a Database (`winzi`) in MySQL and use it
+  - `create database winzi`
+  - `use winzi`
 - execute following queries in MySQL
   1. Create Table: CREATE TABLE `employee` (
     `emp_id` int(5) NOT NULL AUTO_INCREMENT,
