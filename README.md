@@ -67,7 +67,7 @@ This app includes following APIs:
   - `create database winzi`
   - `use winzi`
 - execute following queries in MySQL
-  1. Create Table: CREATE TABLE `employee` (
+  1. CREATE TABLE `employee` (
     `emp_id` int(5) NOT NULL AUTO_INCREMENT,
     `first_name` varchar(100) DEFAULT NULL,
     `last_name` varchar(100) DEFAULT NULL,
@@ -78,7 +78,7 @@ This app includes following APIs:
     PRIMARY KEY (`emp_id`)
   ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
 
-  2. Create Table: CREATE TABLE `manager` (
+  2. CREATE TABLE `manager` (
     `manager_id` int(5) NOT NULL AUTO_INCREMENT,
     `first_name` varchar(100) DEFAULT NULL,
     `last_name` varchar(100) DEFAULT NULL,
@@ -88,7 +88,7 @@ This app includes following APIs:
     PRIMARY KEY (`manager_id`)
   ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
   
-  3. Create Table: CREATE TABLE `project` (
+  3. CREATE TABLE `project` (
     `project_id` int(5) NOT NULL AUTO_INCREMENT,
     `project_name` varchar(200) DEFAULT NULL,
     `status` int(2) DEFAULT '0',
@@ -97,7 +97,7 @@ This app includes following APIs:
     PRIMARY KEY (`project_id`)
   ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1
   
-  4. Create Table: CREATE TABLE `emp_work_info` (
+  4. CREATE TABLE `emp_work_info` (
     `emp_id` int(5) NOT NULL,
     `project_id` int(5) NOT NULL,
     `duration` varchar(100) DEFAULT NULL,
