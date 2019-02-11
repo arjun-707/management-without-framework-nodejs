@@ -110,9 +110,11 @@ This app includes following APIs:
 - install nodemon globally if you want to run your app on `watch` (`npm install -g nodemon`)
 
 **ER Diagram**
+
   ![alt text](https://github.com/arjun-707/management/blob/master/common/public/images/winzi-ER-diagram.png)
 
 **Schema Diagram**
+
   ![alt text](https://github.com/arjun-707/management/blob/master/common/public/images/winzi-schema-diagram.png)
 
 **App Execution**
