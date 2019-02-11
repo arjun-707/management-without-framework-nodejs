@@ -109,6 +109,11 @@ This app includes following APIs:
 - run command `npm install` to install all the dependencies
 - install nodemon globally if you want to run your app on `watch` (`npm install -g nodemon`)
 
+**ER Diagram**
+  - ![alt text](https://github.com/arjun-707/management/common/public/images/winzi-ER-diagram.png)
+
+**Schema Diagram**
+  - ![alt text](https://github.com/arjun-707/management/common/public/images/winzi-schema-diagram.png)
 
 **App Execution**
 - `nodemon index.js`
