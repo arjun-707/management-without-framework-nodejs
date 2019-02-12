@@ -5,12 +5,13 @@ const mysql = require('mysql')
 class ManagementDB {
     // MySQL: insert
     save(table, input) {
-        return new Promise((resolve, reject) =>{
+        return new Promise((resolve, reject) => {
             process.local.getConnection(function(err, connection) {
                 if (err)
                     return reject(err)
                 let query = "INSERT INTO ?? SET ? ";
                 query = mysql.format(query, [table]);
+                console.log(connection)
                 connection.query(query, input, function(err, result) {
                     connection.release();
                     if (err) {
