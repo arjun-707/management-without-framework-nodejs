@@ -111,15 +111,15 @@ This app includes following APIs:
 
 **Input hint**
   
-  ![alt text](https://github.com/arjun-707/management/blob/master/common/public/images/winzi-inout-diagram.png)
+  ![alt text](https://github.com/arjun-707/management-without-framework-nodejs/blob/master/common/public/images/winzi-inout-diagram.png)
   
 **ER Diagram**
 
-  ![alt text](https://github.com/arjun-707/management/blob/master/common/public/images/winzi-ER-diagram.png)
+  ![alt text](https://github.com/arjun-707/management-without-framework-nodejs/blob/master/common/public/images/winzi-ER-diagram.png)
 
 **Schema Diagram**
 
-  ![alt text](https://github.com/arjun-707/management/blob/master/common/public/images/winzi-schema-diagram.png)
+  ![alt text](https://github.com/arjun-707/management-without-framework-nodejs/blob/master/common/public/images/winzi-schema-diagram.png)
 
 **App Execution**
 - `nodemon index.js`
